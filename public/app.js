@@ -7,6 +7,11 @@
     , botEntity
     , entities = {}
 
+  // add tabindex property to canvas so that it can receive keyboard input
+  canvas.tabIndex = 0;
+  canvas.addEventListener('keydown', onKeyDown, false);
+  canvas.addEventListener('keyup', onKeyUp, false);
+
   socket.on('entity', function (newEntity) {
     botEntity = newEntity;
   });
@@ -81,6 +86,31 @@
 
   function entityText(entity) {
     return entity.username || entity.mobType || entity.objectType || entity.type;
+  }
+
+  function onKeyDown(event) {
+    return onKeyEvent(event, true);
+  }
+
+  function onKeyUp(event) {
+    return onKeyEvent(event, false);
+  }
+
+  function onKeyEvent(event, value) {
+    var key = event.which;
+    if (key === 37 || key === 65) {
+      socket.emit('controlState', { name: 'left', value: value });
+    } else if (key === 38 || key === 87) {
+      socket.emit('controlState', { name: 'forward', value: value });
+    } else if (key === 39 || key === 68) {
+      socket.emit('controlState', { name: 'right', value: value });
+    } else if (key === 40 || key === 83) {
+      socket.emit('controlState', { name: 'back', value: value });
+    } else if (key === 32) {
+      socket.emit('controlState', { name: 'jump', value: value });
+    }
+    event.preventDefault();
+    return false;
   }
 
 }());

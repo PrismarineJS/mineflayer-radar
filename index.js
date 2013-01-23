@@ -38,5 +38,9 @@ function inject(bot, options) {
     bot.on('entityMoved', function(entity) {
       socket.emit('entityMoved', entity);
     });
+
+    socket.on('controlState', function(state) {
+      bot.setControlState(state.name, state.value);
+    });
   });
 }
