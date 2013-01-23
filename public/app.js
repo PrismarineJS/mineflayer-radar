@@ -11,6 +11,7 @@
   canvas.tabIndex = 0;
   canvas.addEventListener('keydown', onKeyDown, false);
   canvas.addEventListener('keyup', onKeyUp, false);
+  canvas.addEventListener('mousedown', onMouseDown, false);
 
   socket.on('entity', function (newEntity) {
     botEntity = newEntity;
@@ -111,6 +112,35 @@
     }
     event.preventDefault();
     return false;
+  }
+
+  function onMouseDown(event) {
+    canvas.addEventListener('mouseup', onMouseUp, false);
+    canvas.addEventListener('mousemove', onMouseMove, false);
+    var startYaw = botEntity.yaw;
+    var startPitch = botEntity.pitch;
+    var startX = event.offsetX == null ?
+      (event.pageX - event.target.offsetLeft) : event.offsetX;
+    var startY = event.offsetY == null ?
+      (event.pageY - event.target.offsetTop) : event.offsetY;
+
+    function onMouseUp(event) {
+      canvas.removeEventListener('mouseup', onMouseUp, false);
+      canvas.removeEventListener('mousemove', onMouseMove, false);
+    }
+
+    function onMouseMove(event) {
+      var x = event.offsetX == null ?
+        (event.pageX - event.target.offsetLeft) : event.offsetX;
+      var y = event.offsetY == null ?
+        (event.pageY - event.target.offsetTop) : event.offsetY;
+      var deltaYaw = (x - startX) * Math.PI * 2 / w;
+      var deltaPitch = (y - startY) * Math.PI * 2 / h;
+      socket.emit('look', {
+        yaw: startYaw + deltaYaw,
+        pitch: startPitch + deltaPitch,
+      });
+    }
   }
 
 }());

@@ -42,5 +42,9 @@ function inject(bot, options) {
     socket.on('controlState', function(state) {
       bot.setControlState(state.name, state.value);
     });
+
+    socket.on('look', function(look) {
+      bot.look(look.yaw, look.pitch);
+    });
   });
 }
