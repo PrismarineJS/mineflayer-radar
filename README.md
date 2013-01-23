@@ -4,6 +4,17 @@ A plugin to give you a web-based radar interface to your mineflayer bot.
 
 See [https://github.com/superjoe30/mineflayer/](https://github.com/superjoe30/mineflayer/)
 
+## Features
+
+ * Real-time updating radar of your bot and the entities around it
+ * Remote control the bot with the keyboard and mouse
+
+### Roadmap
+
+ * Help you find precious ores
+ * Display dangerous mobs in red
+ * Ability to change zoom
+
 ## Screenshot
 
 ![](http://i.imgur.com/Wm6EwCN.png)
