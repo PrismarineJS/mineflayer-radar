@@ -53,7 +53,7 @@
     // arrow in the middle that represents bot
     context.save();
     context.translate(centerX, centerY);
-    context.rotate(botEntity.yaw);
+    context.rotate(1.5 * Math.PI - botEntity.yaw);
     context.drawImage(imgArrow, 0, 0, 12, 12, -6, -6, 12, 12);
     context.restore();
 
@@ -64,7 +64,7 @@
       var y = centerY + yFromMc * (entity.position.z - botEntity.position.z);
       context.save();
       context.translate(x, y);
-      context.rotate(entity.yaw);
+      context.rotate(1.5 * Math.PI - entity.yaw);
       context.drawImage(imgBlueArrow, 0, 0, 12, 12, -6, -6, 12, 12);
       context.restore();
 
@@ -83,4 +83,4 @@
     return entity.username || entity.mobType || entity.objectType || entity.type;
   }
 
-})();
+}());
