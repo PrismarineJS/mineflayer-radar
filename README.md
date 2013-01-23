@@ -4,7 +4,7 @@ A plugin to give you a web-based radar interface to your mineflayer bot.
 
 See [https://github.com/superjoe30/mineflayer/](https://github.com/superjoe30/mineflayer/)
 
-YouTube Demo: none
+[YouTube Demo](http://www.youtube.com/watch?v=FjDmAfcVulQ)
 
 ## Screenshot
 
