@@ -12,7 +12,6 @@
   });
 
   socket.on('entitySpawn', function (newEntity) {
-    console.log("entity spawn", newEntity);
     entities[newEntity.id] = newEntity;
   });
 
@@ -40,6 +39,7 @@
   imgBlueArrow.src = '/arrow-blue.png';
   imgRedArrow.src = '/arrow-red.png';
   function draw() {
+    if (! botEntity) return;
     // fill with black
     context.fillStyle = black;
     context.fillRect(0, 0, canvas.width, canvas.height);
