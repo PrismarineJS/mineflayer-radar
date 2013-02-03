@@ -4,6 +4,8 @@ A plugin to give you a web-based radar interface to your mineflayer bot.
 
 See [https://github.com/superjoe30/mineflayer/](https://github.com/superjoe30/mineflayer/)
 
+[YouTube Demo](http://www.youtube.com/watch?v=FjDmAfcVulQ)
+
 ## Features
 
  * Real-time updating radar of your bot and the entities around it
@@ -18,8 +20,6 @@ See [https://github.com/superjoe30/mineflayer/](https://github.com/superjoe30/mi
 ## Screenshot
 
 ![](http://i.imgur.com/Wm6EwCN.png)
-
-[YouTube Demo](http://www.youtube.com/watch?v=FjDmAfcVulQ)
 
 ## Usage
 
