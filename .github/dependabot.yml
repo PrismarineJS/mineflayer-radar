@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: express
+    versions:
+    - "> 3.0.6, < 4"
+  - dependency-name: express
+    versions:
+    - ">= 4.a, < 5"
+  - dependency-name: mineflayer
+    versions:
+    - "> 0.0.13"
+  - dependency-name: mineflayer
+    versions:
+    - "> 0.0.13, < 1"
+  - dependency-name: mineflayer
+    versions:
+    - ">= 1.a, < 2"
+  - dependency-name: mineflayer
+    versions:
+    - ">= 2.a, < 3"
+  - dependency-name: mineflayer-navigate
+    versions:
+    - "> 0.0.2, < 1"
+  - dependency-name: socket.io
+    versions:
+    - "> 0.9.19"
+  - dependency-name: socket.io
+    versions:
+    - ">= 1.a, < 2"
+  - dependency-name: socket.io
+    versions:
+    - ">= 2.a, < 3"
