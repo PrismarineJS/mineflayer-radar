@@ -50,12 +50,6 @@
     context.fillStyle = black;
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    // outer circle
-    context.strokeStyle = white;
-    context.beginPath();
-    context.arc(centerX, centerY, centerX, 0, 2 * Math.PI);
-    context.stroke();
-
     // arrow in the middle that represents bot
     context.save();
     context.translate(centerX, centerY);
