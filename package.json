@@ -10,7 +10,7 @@
     "mineflayer-navigate": "0.0.2"
   },
   "dependencies": {
-    "express": "~5.0.1",
+    "express": "~5.1.0",
     "socket.io": "~0.9.13"
   }
 }
